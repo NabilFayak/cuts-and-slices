@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Delivery Dashboard</title>
+  <link rel="stylesheet" href="styles/dashboard.css">
+  <script src="scripts/dashboard.js"></script>
+  <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+  <script type="text/javascript" type="text/javascript">
+    Parse.initialize("kW5k2CKsFDgQ9riE7zZC7uGCpWXYwMEBkPwa1eye","RcoB3PS3PSnNOKkHk0pwqopR3zW200dGeRBqgzLv"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+    Parse.serverURL = 'https://parseapi.back4app.com/'
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1>Cuts & Slices Online Delivery Dashboard</h1>
+  </header>
+  <div class="container">
+    <button onclick="retrieveOrders()">Refresh</button>
+      <table>
+        <thead>
+          <tr>
+            <th>Order Number</th>
+            <th>Customer Name</th>
+            <th>Customer Address</th>
+            <th>Order Cost</th>
+            <th>Order Status</th>
+          </tr>
+        </thead>
+        <tbody id="orderContainer">
+          <tr>
+            <td>1</td>
+            <td>Joel Miller</td>
+            <td>221B Baker St.</td>
+            <td>$10.31</td>
+            <td>In Progress</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Ellie Williams</td>
+            <td>32 Windsor Gardens</td>
+            <td>$44.46</td>
+            <td>In Progress</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
