@@ -1,7 +1,8 @@
 // When the user clicks the button, open the modal
-function btnFunc() {
+function btnFunc(itemName, itemTotal) {
     document.getElementById("myModal").style.display = "block";
-    document.getElementById("modalText").innerHTML = document.getElementById("myBtn").innerHTML;
+    document.getElementById("modalName").innerHTML = itemName;
+    document.getElementById("modalPrice").innerHTML = itemTotal;
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -13,20 +14,20 @@ function spanFunc() {
 window.onclick = function(event) {
     if (event.target != document.getElementById("quantity")) {
       var itemNum = document.getElementById("quantity").value;
-      var price = Number(document.getElementById("price").innerHTML.slice(1));
+      var price = Number(document.getElementById("modalPrice").innerHTML.slice(1));
       var totalPrice = "$" + itemNum * price
       document.getElementById("itemTotal").innerHTML = totalPrice;
     }
   }
 
 // When user clicks add to cart, closes modal, refreshes cart total and items to cart list
-function cartBtnFunc() {
+function cartBtnFunc(itemName, itemTotal) {
     //closes modal
     document.getElementById("myModal").style.display = "none";
 
 
     var itemTotal = document.getElementById('itemTotal').innerHTML;
-    var itemName = document.getElementById('modalText').innerHTML;
+    var itemName = document.getElementById('modalName').innerHTML;
     var cartTotal = Number(document.getElementById("cartTotal").innerHTML.slice(1));
     var newTotal = cartTotal + Number(itemTotal.slice(1));
 

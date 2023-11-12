@@ -326,7 +326,7 @@ body.elementor-page .elementor-widget-menu-anchor{margin-bottom:0}</style>		<div
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							<button id="myBtn" onclick="btnFunc()">GARLIC KNOTS (3 KNOTS)</button>
+							<button id="myBtn" onclick="btnFunc('GARLIC KNOTS (3 KNOTS)', '$2.00')">GARLIC KNOTS (3 KNOTS)</button>
 						</span>
 						<span class="elementor-price-list-separator"></span>
 						<span class="elementor-price-list-price" id="price">$2.00</span>
@@ -338,8 +338,11 @@ body.elementor-page .elementor-widget-menu-anchor{margin-bottom:0}</style>		<div
 				<!-- Modal content -->
 				<div class="modal-content">
 					<span class="close" onclick="spanFunc()">&times;</span>
-					<h5 id="modalText">ITEM NAME</h5>
-					<p>How many would you like?</p>
+					<div id="modalText">
+						<h5 id="modalName">NAME</h5>
+						<h5 id="modalPrice">PRICE</h5>
+					</div>
+					<p id="question">How many would you like?</p>
 					<input type="number" id="quantity"><br>
 					<div id="totalArea">
 						<p id="totalText"><strong>TOTAL</strong></p>
@@ -349,23 +352,25 @@ body.elementor-page .elementor-widget-menu-anchor{margin-bottom:0}</style>		<div
 					<button id="cartBtn" onclick="cartBtnFunc()">Add To Cart</button>
 				</div>
 			</div>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							SALMON BITES	</span>
+							<button onclick="btnFunc('SALMON BITES', '$10.00')">SALMON BITES</button>
+						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$10.00</span>
+						<span class="elementor-price-list-price" id="price">$10.00</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							pepperoni pin wheel		</span>
+							<button onclick="btnFunc('PEPPERONI PIN WHEEL', '$6.00')">pepperoni pin wheel</button>
+						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$6.00</span>
+						<span class="elementor-price-list-price" id="price">$6.00</span>
 					</div>
 				</div>
 			</a></li>
@@ -405,33 +410,33 @@ body.elementor-page .elementor-widget-menu-anchor{margin-bottom:0}</style>		<div
 
 <!-------------------------------- DRINKS -------------------------------->
 		<ul class="elementor-price-list">
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							Can soda						</span>
+							<button onclick="btnFunc('CAN SODA', '$1.50')">Can soda</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$1.50</span>
+						<span class="elementor-price-list-price" id="price">$1.50</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							Water						</span>
+							<button onclick="btnFunc('WATER', '$1.00')">Water</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$1.00</span>
+						<span class="elementor-price-list-price" id="price">$1.00</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							apple juice						</span>
+							<button onclick="btnFunc('APPLE JUICE', '$3.00')">apple juice</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$3.00</span>
+						<span class="elementor-price-list-price" id="price">$3.00</span>
 					</div>
 				</div>
 			</a></li>
@@ -472,25 +477,25 @@ body.elementor-page .elementor-widget-menu-anchor{margin-bottom:0}</style>		<div
 
 <!-------------------------------- COOKIES -------------------------------->
 		<ul class="elementor-price-list">
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							COOKIES						</span>
+							<button onclick="btnFunc('COOKIES', '$1.00')">COOKIES</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$1.00 EA</span>
+						<span class="elementor-price-list-price" id="price">$1.00 EA</span>
 					</div>
 						<p class="elementor-price-list-description">
 							CHOCOLATE CHIP / WHITE CHOCOLATE /  MACADAMIA / OATMEAL / RAISIN / RED VELVET, SUGAR COOKIE						</p>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							BROOKIES						</span>
+							<button onclick="btnFunc('BROOKIES', '$6.00')">BROOKIES</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$6.00</span>
+						<span class="elementor-price-list-price" id="price">$6.00</span>
 					</div>
 				</div>
 			</a></li>
@@ -558,32 +563,32 @@ body.elementor-page .elementor-widget-menu-anchor{margin-bottom:0}</style>		<div
 
 <!-------------------------------- SLICES -------------------------------->
 		<ul class="elementor-price-list">
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							CLASSIC	</span>
+							<button onclick="btnFunc('CLASSIC', '$3.50')">CLASSIC</button>	</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$3.50</span>
+						<span class="elementor-price-list-price" id="price">$3.50</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							beef pepperoni						</span>
+							<button onclick="btnFunc('BEEF PEPPERONI', '$5.00')">beef pepperoni</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$5.00</span>
+						<span class="elementor-price-list-price" id="price">$5.00</span>
 					</div>
 				</div>
-			</a></li>												<li><a class="elementor-price-list-item" href="#">
+			</a></li>												<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							extra cheese						</span>
+							<button onclick="btnFunc('EXTRA CHEESE', '$4.50')">extra cheese</button>					</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$4.50</span>
+						<span class="elementor-price-list-price" id="price">$4.50</span>
 					</div>
 				</div>
 			</a></li>
@@ -620,43 +625,43 @@ body.elementor-page .elementor-widget-menu-anchor{margin-bottom:0}</style>		<div
 
 <!-------------------------------- VEGAN -------------------------------->
 		<ul class="elementor-price-list">
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							vegan cheese	</span>
+							<button onclick="btnFunc('VEGAN CHEESE', '$5.00')">vegan cheese</button>	</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$5.00</span>
+						<span class="elementor-price-list-price" id="price">$5.00</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							vegan specialty						</span>
+							<button onclick="btnFunc('VEGAN SPECIALTY', '$7.25')">vegan specialty</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$7.25</span>
+						<span class="elementor-price-list-price" id="price">$7.25</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							vegan truffle						</span>
+							<button onclick="btnFunc('VEGAN TRUFFLE', '$10.00')">vegan truffle</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$10.00</span>
+						<span class="elementor-price-list-price" id="price">$10.00</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							veggie						</span>
+							<button onclick="btnFunc('VEGGIE', '$6.75')">veggie</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$6.75</span>
+						<span class="elementor-price-list-price" id="price">$6.75</span>
 					</div>
 				</div>
 			</a></li>
@@ -692,123 +697,123 @@ body.elementor-page .elementor-widget-menu-anchor{margin-bottom:0}</style>		<div
 
 <!-------------------------------- CHICKEN -------------------------------->
 		<ul class="elementor-price-list">
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							bbq chicken						</span>
+							<button onclick="btnFunc('BBQ CHICKEN', '$7.05')">bbq chicken</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$7.05</span>
+						<span class="elementor-price-list-price" id="price">$7.05</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							buffalo chicken						</span>
+							<button onclick="btnFunc('BUFFALO CHICKEN', '$7.05')">buffalo chicken</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$7.05</span>
+						<span class="elementor-price-list-price" id="price">$7.05</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							jerk chicken						</span>
+							<button onclick="btnFunc('JERK CHICKEN', '$7.28')">jerk chicken</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$7.28</span>
+						<span class="elementor-price-list-price" id="price">$7.28</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							curry chicken						</span>
+							<button onclick="btnFunc('CURRY CHICKEN', '$7.80')">curry chicken</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$7.80</span>
+						<span class="elementor-price-list-price" id="price">$7.80</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							Sweet Chili Chicken						</span>
+							<button onclick="btnFunc('SWEET CHILI CHICKEN', '$8.32')">Sweet Chili Chicken</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$8.32</span>
+						<span class="elementor-price-list-price" id="price">$8.32</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							chicken teriyaki 						</span>
+							<button onclick="btnFunc('CHICKEN TERIYAKI', '8.32')">chicken teriyaki</button> 						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$8.32</span>
+						<span class="elementor-price-list-price" id="price">$8.32</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							chicken black truffle alfredo with turkey bacon 						</span>
+							<button onclick="btnFunc('CHICKEN BLACK TRUFFLE ALFREDO WITH TURKEY BACON', '$12.00')">chicken black truffle alfredo with turkey bacon</button> 						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$12.00</span>
+						<span class="elementor-price-list-price" id="price">$12.00</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							jerk chicken black truffle alfredo 						</span>
+							<button onclick="btnFunc('JERK CHICKEN BLACK TRUFFLE ALFREDO', '$11.96')">jerk chicken black truffle alfredo</button> 						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$11.96</span>
+						<span class="elementor-price-list-price" id="price">$11.96</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							hawaiian 						</span>
+							<button onclick="btnFunc('HAWAIIAN', '$8.32')">hawaiian</button> 						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$8.32</span>
+						<span class="elementor-price-list-price" id="price">$8.32</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							Chicken & French Toast						</span>
+							<button onclick="btnFunc('CHICKEN & FRENCH TOAST', '$7.28')">Chicken & French Toast</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$7.28</span>
+						<span class="elementor-price-list-price" id="price">$7.28</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							chicken and waffle						</span>
+							<button onclick="btnFunc('CHCIKEN AND WAFFLE', '$7.28')">chicken and waffle</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$7.28</span>
+						<span class="elementor-price-list-price" id="price">$7.28</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							turkey bacon chicken ranch						</span>
+							<button onclick="btnFunc('TURKEY BACON CHICKEN RANCH', '$8.32')">turkey bacon chicken ranch</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$8.32</span>
+						<span class="elementor-price-list-price" id="price">$8.32</span>
 					</div>
 				</div>
 			</a></li>
@@ -840,33 +845,33 @@ body.elementor-page .elementor-widget-menu-anchor{margin-bottom:0}</style>		<div
 
 <!-------------------------------- CHEESE -------------------------------->
 		<ul class="elementor-price-list">
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							CHEESE						</span>
+							<button onclick="btnFunc('CHEESE', '$3.50')">CHEESE</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$3.50</span>
+						<span class="elementor-price-list-price" id="price">$3.50</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							EXTRA CHEESE						</span>
+							<button onclick="btnFunc('EXTRA CHEESE', '$4.68')">EXTRA CHEESE</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$4.68</span>
+						<span class="elementor-price-list-price" id="price">$4.68</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							teriyaki oxtail						</span>
+							<button onclick="btnFunc('TERIYAKI OXTAIL', '$11.44')">teriyaki oxtail</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$11.44</span>
+						<span class="elementor-price-list-price" id="price">$11.44</span>
 					</div>
 				</div>
 			</a></li>
@@ -914,53 +919,53 @@ body.elementor-page .elementor-widget-menu-anchor{margin-bottom:0}</style>		<div
 
 <!-------------------------------- BEEF -------------------------------->
 		<ul class="elementor-price-list">
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							CHOPPED CHEESE						</span>
+							<button onclick="btnFunc('CHOPPED CHEESE', '$7.28')">CHOPPED CHEESE</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$7.28</span>
+						<span class="elementor-price-list-price" id="price">$7.28</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							TULUM						</span>
+							<button onclick="btnFunc('TULUM', '$8.32')">TULUM</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$8.32</span>
+						<span class="elementor-price-list-price" id="price">$8.32</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							LASAGNA						</span>
+							<button onclick="btnFunc('LASAGNA', '$6.76')">LASAGNA</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$6.76</span>
+						<span class="elementor-price-list-price" id="price">$6.76</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							beef pepperoni 						</span>
+							<button onclick="btnFunc('BEEF PEPPERONI', '$5.00')">beef pepperoni</button> 						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$5.00</span>
+						<span class="elementor-price-list-price" id="price">$5.00</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							turkey sausage w/beef pepperoni						</span>
+							<button onclick="btnFunc('TURKEY SAUSAGE W/ BEEF PEPPERONI', '$8.32')">turkey sausage w/beef pepperoni</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$8.32</span>
+						<span class="elementor-price-list-price" id="price">$8.32</span>
 					</div>
 				</div>
 			</a></li>
@@ -1000,73 +1005,73 @@ body.elementor-page .elementor-widget-menu-anchor{margin-bottom:0}</style>		<div
 
 <!-------------------------------- SHRIMP -------------------------------->
 		<ul class="elementor-price-list">
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							CURRY SHRIMP						</span>
+							<button onclick="btnFunc('CURRY SHRIMP', '$10.00')">CURRY SHRIMP</button>				</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$10.00</span>
+						<span class="elementor-price-list-price" id="price">$10.00</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							JERK SHRIMP						</span>
+							<button onclick="btnFunc('JERK SHRIMP', '$10.00')">JERK SHRIMP</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$10.00</span>
+						<span class="elementor-price-list-price" id="price">$10.00</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							GARLIC PARMESAN SHRIMP						</span>
+							<button onclick="btnFunc('GARLIC PARMESAN SHRIMP', '$10.00')">GARLIC PARMESAN SHRIMP</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$10.00</span>
+						<span class="elementor-price-list-price" id="price">$10.00</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							SWEET CHILI SHRIMP						</span>
+							<button onclick="btnFunc('SWEET CHILI SOUP', '$10.00')">SWEET CHILI SHRIMP</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$10.00</span>
+						<span class="elementor-price-list-price" id="price">$10.00</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							SHRIMP SCAMPI						</span>
+							<button onclick="btnFunc('SHRIMP SCAMPI', '$10.00')">SHRIMP SCAMPI</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$10.00</span>
+						<span class="elementor-price-list-price" id="price">$10.00</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							shrimp and lobster alfredo w/ black truffle						</span>
+							<button onclick="btnFunc('SHRIMP AND LOBSTER', '$15.00')">shrimp and lobster alfredo w/ black truffle</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$15.00</span>
+						<span class="elementor-price-list-price" id="price">$15.00</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							shrimp alfredo w/ black truffle						</span>
+							<button onclick="btnFunc('SHRIMP ALFREDO W/ BLACK TRUFFLE', '$12.50')">shrimp alfredo w/ black truffle</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$12.50</span>
+						<span class="elementor-price-list-price" id="price">$12.50</span>
 					</div>
 				</div>
 			</a></li>
@@ -1100,53 +1105,53 @@ body.elementor-page .elementor-widget-menu-anchor{margin-bottom:0}</style>		<div
 
 <!-------------------------------- SALMON -------------------------------->
 		<ul class="elementor-price-list">
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							sweet chili salmon						</span>
+							<button onclick="btnFunc('SWEET CHILI SALMON', '$10.00')">sweet chili salmon</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$10.00</span>
+						<span class="elementor-price-list-price" id="price">$10.00</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							jerk bbq salmon						</span>
+							<button onclick="btnFunc('JERK BBQ SALMON', '$10.00')">jerk bbq salmon</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$10.00</span>
+						<span class="elementor-price-list-price" id="price">$10.00</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							fried salmon alfredo w/ black truffle						</span>
+							<button onclick="btnFunc('FRIED SALMON ALFREDO W/ BLACK TRUFFLE', '$13.00')">fried salmon alfredo w/ black truffle</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$13.00</span>
+						<span class="elementor-price-list-price" id="price">$13.00</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							garlic parm salmon						</span>
+							<button onclick="btnFunc('GARLIC PARM SALMON', '$10.00')">garlic parm salmon</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$10.00</span>
+						<span class="elementor-price-list-price" id="price">$10.00</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							Fried salmon diavlo 						</span>
+							<button onclick="btnFunc('FRIED SALMON DIAVLO', '$11.44')">Fried salmon diavlo</button> 						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$11.44</span>
+						<span class="elementor-price-list-price" id="price">$11.44</span>
 					</div>
 				</div>
 			</a></li>
@@ -1190,33 +1195,33 @@ body.elementor-page .elementor-widget-menu-anchor{margin-bottom:0}</style>		<div
 
 <!-------------------------------- VEGAN -------------------------------->
 		<ul class="elementor-price-list">
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							vegan specialty						</span>
+							<button onclick="btnFunc('VEGAN SPECIALTY', '$7.28')">vegan specialty</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$7.28</span>
+						<span class="elementor-price-list-price" id="price">$7.28</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							vegan truffle						</span>
+							<button onclick="btnFunc('VEGAN TRUFFLE', '$10.00')">vegan truffle</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$10.00</span>
+						<span class="elementor-price-list-price" id="price">$10.00</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							vegan cheese						</span>
+							<button onclick="btnFunc('VEGAN CHEESE', '$5.00')">vegan cheese</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$5.00</span>
+						<span class="elementor-price-list-price" id="price">$5.00</span>
 					</div>
 				</div>
 			</a></li>
@@ -1250,43 +1255,43 @@ body.elementor-page .elementor-widget-menu-anchor{margin-bottom:0}</style>		<div
 
 <!-------------------------------- OXTAILS -------------------------------->
 		<ul class="elementor-price-list">
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							curry oxtail 						</span>
+							<button onclick="btnFunc('CURRY OXTAIL', '$11.444')">curry oxtail</button> 						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$11.44</span>
+						<span class="elementor-price-list-price" id="price">$11.44</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							brown stew oxtail						</span>
+							<button onclick="btnFunc('BROWN STEW OXTAIL', '$11.44')">brown stew oxtail</button>						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$11.44</span>
+						<span class="elementor-price-list-price" id="price">$11.44</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							sweet chili oxtail 						</span>
+							<button onclick="btnFunc('SWEET CHILI OXTAIL', '$11.44')">sweet chili oxtail</button> 						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$11.44</span>
+						<span class="elementor-price-list-price" id="price">$11.44</span>
 					</div>
 				</div>
 			</a></li>
-			<li><a class="elementor-price-list-item" href="#">
+			<li><a class="elementor-price-list-item">
 				<div class="elementor-price-list-text">
 					<div class="elementor-price-list-header">
 						<span class="elementor-price-list-title">
-							teriyaki oxtail 						</span>
+							<button onclick="btnFunc('TERIYAKI OXTAIL', '$11.44')">teriyaki oxtail</button> 						</span>
 						<span class="elementor-price-list-separator"></span>
-						<span class="elementor-price-list-price">$11.44</span>
+						<span class="elementor-price-list-price" id="price">$11.44</span>
 					</div>
 				</div>
 			</a></li>
