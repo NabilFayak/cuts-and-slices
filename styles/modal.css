@@ -66,3 +66,15 @@
     margin-left: 45%;
     background-color: black;
 }
+
+#modalName {
+    float: left;
+}
+
+#modalPrice {
+    float: right;
+}
+
+#question {
+    clear: both;
+}
