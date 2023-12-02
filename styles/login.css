@@ -15,3 +15,43 @@
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
 }
+
+#createBox {
+    float: right;
+}
+
+#checkoutBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#container {
+    display: flex;
+    width: 100%;
+}
+
+#shipping {
+    width: 30%;
+    flex: 0.75;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin: 5px;
+}
+
+#payment {
+    width: 30%;
+    flex: 0.75;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin: 5px;
+}
+
+#divider {
+    border-left: 1px solid #ccc;
+    margin: 5px;
+    width: 2px;
+}
