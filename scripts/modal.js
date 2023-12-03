@@ -33,6 +33,7 @@ function cartBtnFunc(itemName, itemTotal) {
 
     //refreshes cart total
     document.getElementById("cartTotal").innerHTML = '$' + newTotal;
+    sessionStorage.setItem('OrderCost', newTotal);
 
     //adds items to cart list
     document.getElementById("cartItems").innerHTML += '<ul class="elementor-price-list"><li><a class="elementor-price-list-item"> <div class="elementor-price-list-text"><div class="elementor-price-list-header"><span class="elementor-price-list-title">' + itemName + '</span><span class="elementor-price-list-separator"></span><span class="elementor-price-list-price">' + itemTotal + '</span></div></div></a></li></ul>';
